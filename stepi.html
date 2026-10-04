@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arockiya Stepilda U | Portfolio</title>
+
+    <meta name="description"
+        content="Portfolio of Arockiya Stepilda U - Computer Science Engineering Student">
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f8fafc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        nav {
+            max-width: 1150px;
+            height: 70px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1d3557;
+        }
+
+        .logo span {
+            color: #607d9e;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1d3557;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #1d3557;
+        }
+
+        /* =========================
+           COMMON
+        ========================= */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 34px;
+            color: #172033;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #6b7280;
+        }
+
+        .line {
+            width: 50px;
+            height: 3px;
+            background: #1d3557;
+            margin-top: 15px;
+        }
+
+        /* =========================
+           HOME
+        ========================= */
+
+        #home {
+            min-height: 100vh;
+            max-width: 1150px;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 70px;
+
+            padding-top: 120px;
+        }
+
+        .intro {
+            color: #1d3557;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(45px, 6vw, 68px);
+            line-height: 1.05;
+            color: #172033;
+            margin-bottom: 18px;
+        }
+
+        .hero-content h2 {
+            font-size: 25px;
+            font-weight: 500;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 620px;
+            font-size: 17px;
+            color: #5f6875;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 21px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #1d3557;
+            color: #fff;
+        }
+
+        .primary-btn:hover {
+            background: #14253d;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            background: #fff;
+            color: #1d3557;
+            border: 1px solid #b9c3cf;
+        }
+
+        .secondary-btn:hover {
+            background: #1d3557;
+            color: #fff;
+            border-color: #1d3557;
+        }
+
+        /* PROFILE IMAGE */
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-frame {
+            width: 350px;
+            height: 350px;
+            padding: 7px;
+            border-radius: 50%;
+            background: #1d3557;
+            box-shadow: 0 18px 45px rgba(29, 53, 87, 0.18);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            background: #eee;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 60px;
+        }
+
+        .about-text {
+            font-size: 17px;
+            color: #5f6875;
+            line-height: 1.9;
+        }
+
+        .about-info {
+            border-left: 3px solid #1d3557;
+            padding-left: 25px;
+        }
+
+        .info-item {
+            margin-bottom: 22px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item small {
+            display: block;
+            color: #7b8490;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .info-item strong {
+            color: #172033;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .education-item {
+            background: #fff;
+            border: 1px solid #e3e7ec;
+            border-left: 4px solid #1d3557;
+            padding: 25px 28px;
+        }
+
+        .education-year {
+            color: #1d3557;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .education-item h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #697382;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #fff;
+            border: 1px solid #e3e7ec;
+            padding: 28px;
+        }
+
+        .skill-box h3 {
+            font-size: 19px;
+            margin-bottom: 18px;
+            color: #1d3557;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .skill {
+            background: #f1f5f9;
+            color: #374151;
+            padding: 7px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           CERTIFICATES
+        ========================= */
+
+        .certificate-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .certificate {
+            background: #fff;
+            border: 1px solid #e3e7ec;
+            padding: 28px;
+        }
+
+        .certificate h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+            color: #172033;
+        }
+
+        .certificate p {
+            color: #66707d;
+            font-size: 15px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: #fff;
+            border: 1px solid #e1e5ea;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            border-color: #1d3557;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            transform: translateY(-4px);
+        }
+
+        .project-label {
+            color: #1d3557;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 13px;
+        }
+
+        .project p {
+            color: #66707d;
+            margin-bottom: 15px;
+        }
+
+        .project ul {
+            padding-left: 20px;
+            color: #5f6875;
+            margin-bottom: 18px;
+        }
+
+        .project li {
+            margin-bottom: 7px;
+        }
+
+        .tech {
+            display: inline-block;
+            padding: 6px 11px;
+            background: #edf2f7;
+            color: #1d3557;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================= */
+
+        .achievement {
+            background: #fff;
+            border: 1px solid #e1e5ea;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .achievement h3 {
+            color: #172033;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .achievement .subtitle {
+            color: #1d3557;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .achievement p {
+            color: #66707d;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            padding-bottom: 70px;
+        }
+
+        .contact-box {
+            background: #1d3557;
+            color: #fff;
+            padding: 50px;
+            border-radius: 6px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-box h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #dbe4ef;
+            max-width: 500px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-links a {
+            color: #fff;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.25);
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            padding-left: 6px;
+            border-color: #fff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #fff;
+            border-top: 1px solid #e5e7eb;
+            color: #737b86;
+            font-size: 13px;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+
+                background: #fff;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+
+                border-bottom: 1px solid #ddd;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 14px 25px;
+                border-bottom: 1px solid #eee;
+            }
+
+            #home {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 45px;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero-description {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .hero-content h2 {
+                font-size: 20px;
+            }
+
+            .image-frame {
+                width: 270px;
+                height: 270px;
+            }
+
+            .certificate-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 32px 25px;
+            }
+
+            .contact-box h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                AS<span>.</span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <div class="menu-btn" id="menuBtn">
+                ☰
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home">
+
+        <div class="hero-content reveal">
+
+            <p class="intro">
+                HELLO, I'M
+            </p>
+
+            <h1>
+                Arockiya<br>
+                Stepilda U
+            </h1>
+
+            <h2>
+                Computer Science Engineering Student
+            </h2>
+
+            <p class="hero-description">
+                Aspiring Computer Science Engineer with strong technical
+                and soft skills, seeking opportunities to apply knowledge
+                in software development and innovative projects. Passionate
+                about problem-solving, leadership, and creating impactful
+                solutions through technology.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn primary-btn">
+                    View Projects
+                </a>
+
+                <a href="https://www.linkedin.com/in/arockiya-stepilda-selvan-24bb64355/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn secondary-btn">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/stepilda"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn secondary-btn">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image reveal">
+
+            <div class="image-frame">
+
+                <!-- Keep image.png in the same folder as index.html -->
+                <img src="image.png"
+                    alt="Arockiya Stepilda U">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-heading reveal">
+
+            <h2>About Me</h2>
+
+            <p>
+                A short introduction about my career goals and interests.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-text reveal">
+
+                <p>
+                    Aspiring Computer Science Engineer with strong technical
+                    and soft skills, seeking opportunities to apply knowledge
+                    in software development and innovative projects.
+                    Passionate about problem-solving, leadership, and creating
+                    impactful solutions through technology.
+                </p>
+
+            </div>
+
+
+            <div class="about-info reveal">
+
+                <div class="info-item">
+                    <small>Degree</small>
+                    <strong>B.E Computer Science and Engineering</strong>
+                </div>
+
+                <div class="info-item">
+                    <small>College</small>
+                    <strong>DMI Engineering College</strong>
+                </div>
+
+                <div class="info-item">
+                    <small>CGPA</small>
+                    <strong>8.47</strong>
+                </div>
+
+                <div class="info-item">
+                    <small>Graduation</small>
+                    <strong>2024 - 2028</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="section-heading reveal">
+
+            <h2>Education</h2>
+
+            <p>
+                My academic background.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="education-list">
+
+            <div class="education-item reveal">
+
+                <div class="education-year">
+                    2024 - 2028
+                </div>
+
+                <h3>
+                    B.E Computer Science and Engineering
+                </h3>
+
+                <p>
+                    DMI Engineering College
+                </p>
+
+                <p>
+                    CGPA: <strong>8.47</strong>
+                </p>
+
+            </div>
+
+
+            <div class="education-item reveal">
+
+                <div class="education-year">
+                    2023 - 2024
+                </div>
+
+                <h3>
+                    HSC
+                </h3>
+
+                <p>
+                    Sacred Higher Secondary School
+                </p>
+
+                <p>
+                    Percentage: <strong>84.5%</strong>
+                </p>
+
+            </div>
+
+
+            <div class="education-item reveal">
+
+                <div class="education-year">
+                    2021 - 2022
+                </div>
+
+                <h3>
+                    SSLC
+                </h3>
+
+                <p>
+                    Sacred Heart Higher Secondary School
+                </p>
+
+                <p>
+                    Percentage: <strong>89.2%</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-heading reveal">
+
+            <h2>Skills</h2>
+
+            <p>
+                Technical skills, soft skills and tools I use.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <div class="skill-box reveal">
+
+                <h3>Technical Skills</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">MySQL</span>
+                    <span class="skill">Python</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-box reveal">
+
+                <h3>Soft Skills</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">Leadership</span>
+                    <span class="skill">Problem-Solving</span>
+                    <span class="skill">Teamwork</span>
+                    <span class="skill">Quick Learner</span>
+                    <span class="skill">Time Management</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-box reveal">
+
+                <h3>Tools & Platforms</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill">Canva</span>
+                    <span class="skill">Microsoft Word</span>
+                    <span class="skill">Visual Studio Code</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATES
+    ========================== -->
+
+    <section id="certificates">
+
+        <div class="section-heading reveal">
+
+            <h2>Certificates</h2>
+
+            <p>
+                Courses and certifications I have completed.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="certificate-list">
+
+            <div class="certificate reveal">
+
+                <h3>
+                    NPTEL – Python Programming and Problem Solving
+                </h3>
+
+                <p>
+                    Completed the course with 55%, covering Python basics,
+                    control structures, functions, data structures and
+                    logical problem-solving.
+                </p>
+
+            </div>
+
+
+            <div class="certificate reveal">
+
+                <h3>
+                    MongoDB Basics for Students
+                </h3>
+
+                <p>
+                    Completed certification covering NoSQL concepts,
+                    documents and collections, and basic database
+                    operations in MongoDB.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-heading reveal">
+
+            <h2>Projects</h2>
+
+            <p>
+                Projects that demonstrate my technical and problem-solving skills.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- AGRI-LINK -->
+
+            <div class="project reveal">
+
+                <div class="project-label">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    Agri-Link App
+                </h3>
+
+                <p>
+                    Developed AgriLink, an agriculture platform connecting
+                    farmers directly with buyers for better crop selling
+                    and market access.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Aims to reduce dependence on middlemen so farmers
+                        can get fairer prices for their crops.
+                    </li>
+
+                    <li>
+                        Provides a simple interface for farmers to list
+                        produce and for buyers to browse and connect.
+                    </li>
+
+                </ul>
+
+                <span class="tech">
+                    HTML • CSS • JavaScript • MySQL
+                </span>
+
+            </div>
+
+
+            <!-- LEARNER TO CAREER -->
+
+            <div class="project reveal">
+
+                <div class="project-label">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Learner to Career
+                </h3>
+
+                <p>
+                    Internal Hackathon Project at DMI Engineering College.
+                    Created a resume-building and career-guidance platform
+                    for students.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Resume-building platform for students.
+                    </li>
+
+                    <li>
+                        Career-guidance platform designed to support
+                        students in their career journey.
+                    </li>
+
+                    <li>
+                        Worked in a team under time pressure.
+                    </li>
+
+                </ul>
+
+                <span class="tech">
+                    Hackathon Project
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACHIEVEMENTS
+    ========================== -->
+
+    <section id="achievements">
+
+        <div class="section-heading reveal">
+
+            <h2>Achievements</h2>
+
+            <p>
+                Technical projects and events.
+            </p>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="achievement reveal">
+
+            <h3>
+                Smart Water Tank Monitoring System
+            </h3>
+
+            <div class="subtitle">
+                Presented at Technical Symposium, Rohini College of
+                Engineering and Technology
+            </div>
+
+            <p>
+                Developed an IoT-based system using ESP32 and sensors to
+                monitor water level, quality, and motor status in real time.
+                Implemented RGB LED alerts and mobile/cloud monitoring to
+                provide instant notifications for low water, poor quality,
+                and abnormal conditions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="contact-box reveal">
+
+            <div>
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+                <p>
+                    I am looking for opportunities to apply my technical
+                    knowledge, improve my skills, and contribute to
+                    innovative software projects.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a href="tel:+917397642517">
+                    📞 +91 7397642517
+                </a>
+
+                <a href="mailto:stepildastepilda@gmail.com">
+                    ✉ stepildastepilda@gmail.com
+                </a>
+
+                <a href="https://www.linkedin.com/in/arockiya-stepilda-selvan-24bb64355/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    🔗 LinkedIn Profile
+                </a>
+
+                <a href="https://github.com/stepilda"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    💻 GitHub Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © <span id="year"></span> Arockiya Stepilda U.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* Mobile Menu */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+        });
+
+
+        /* Close menu after clicking */
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+            });
+
+        });
+
+
+        /* Scroll Reveal */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        function revealOnScroll() {
+
+            revealElements.forEach(function (element) {
+
+                const position =
+                    element.getBoundingClientRect().top;
+
+                const screenHeight =
+                    window.innerHeight;
+
+                if (position < screenHeight - 70) {
+                    element.classList.add("active");
+                }
+
+            });
+
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+
+        revealOnScroll();
+
+
+        /* Current Year */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+
+</html>
